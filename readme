@@ -1,0 +1,10 @@
+This program is meant to operate as a selection and management system for designing fireteams within Infinity N5's new
+rule system. This is specifically built for JSA's Shidenbutai faction although it can be modified for any
+faction or sectorials by changing the troops available.
+
+To operate: Run the Fireteam.py file, the options are:
+1. View current teams - This lists how full each team is and what team it is.
+2. Add a unit to a team - This is how you add members to each possible fireteam, with options for troop and their profile changing
+depending on the fireteam chosen.
+3. Remove a unit from the current team - You can do this to remove and therefore replace members of a team.
+

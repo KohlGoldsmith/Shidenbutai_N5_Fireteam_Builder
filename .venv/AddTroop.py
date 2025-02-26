@@ -3,12 +3,14 @@ from xml.etree.ElementTree import tostring
 from TroopList import Troop
 from TroopList import teamTroopList
 from TroopList import fireteamLists
+#This is checking that each team can only has as many members as specified by its size, 2, 3, or 5 respectively
 duo1Count =0
 duo2Count=0
 duo3Count=0
 harrisCount=0
 coreCount=0
 
+#Main method for adding a troop from the Fireteam file
 def addTroop(fireteamLists):
     global duo1Count
     global duo2Count
@@ -33,19 +35,23 @@ def addTroop(fireteamLists):
     print("Aida Swanson")
 
 
-
+    #This is prompting the user to select a troop based off its numerical value after listing all of its properties as defined in the TroopList
     while True:
             troopType= input("Which troop do you wish to add?: ")
             matchingTroops = [troop for troop in teamTroopList if troop.name == troopType and fireteamChoice == troop.teamName]
             if not matchingTroops:
+                #Needs the troop to mach a selection
                 print("That troop doesn't belong in that fireteam. Pick again.\n")
                 continue
+
+                #Shows all troop profiles for the selected basic name
             print("\nMatching Troops:")
             for index, troop in enumerate(matchingTroops, start=1):
                 print(f"{index}. Name: {troop.name}, Points: {troop.points}, Weapon: {troop.weapon}, "
                  f"Team Name: {troop.teamName}, Team Size(s): First Size: {troop.teamSizeOne} Second Size:{troop.teamSizeTwo}, "
                  f"Equipment: {troop.equipment}, Specialist: {troop.specialist}, Core: {troop.core}")
             try:
+                #This is to select the specific troop based on the number chosen.
                 indexChoice = int(input("Choose the Troop number to add: ")) -1
                 if 0<= indexChoice < len(matchingTroops):
                     chosenTroop = matchingTroops[indexChoice]

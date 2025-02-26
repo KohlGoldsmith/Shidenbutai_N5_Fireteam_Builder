@@ -1,19 +1,24 @@
-class Troop:
+class Troop: #This is the basic class that contains all of the relevant information for a trooper in the game. Minus SWC.
+
     def __init__(self, name, points, weapon, teamName, teamSizeOne, teamSizeTwo,teamSizeThree, equipment, specialist, core):
-        self.name = name
-        self.points = points
-        self.weapon = weapon
-        self.teamName =teamName
-        self.teamSizeOne = teamSizeOne
-        self.teamSizeTwo = teamSizeTwo
-        self.teamSizeThree = teamSizeThree
-        self.equipment = equipment
-        self.specialist = specialist
-        self.core = core
+        self.name = name #Generic name, there will be repeats
+        self.points = points #Total point value for the profile
+        self.weapon = weapon #All weapons
+        self.teamName = teamName #Name of the specific fireteam it can appear in
+        self.teamSizeOne = teamSizeOne #This is specifying the size of the team a troop can appear in if it only has one team
+        self.teamSizeTwo = teamSizeTwo #This is ensuring that there are options for two team profiles
+        self.teamSizeThree = teamSizeThree #Not necessarily used in this sectorial, but for 3 fireteam factions it would apply
+        self.equipment = equipment #All equipment
+        self.specialist = specialist #If they're a specialist for objectives
+        self.core = core #If they are a core member of any team for bonuses
+
+
+    #Turning the characteristics of a trooper into a string to be fed into a print menu, instead of pointer locations
     def __repr__(self):
          return (f"Troop(name={teamTroopList[1]}, points={self.points}, weapon={self.weapon}, "
              f"teamName={self.teamName}, teamSize={self.teamSize}, equipment={self.equipment}, specialiist={self.specialist}, core={self.core})")
 
+    #Initializing the teams present in a list as blank arrays.
 fireteamLists= {
     "Duo 1":[],
     "Duo 2":[],
@@ -22,6 +27,7 @@ fireteamLists= {
     "Core":[]
 }
 
+#List of all possible profiles tobe selected.
 teamTroopList =[Troop("Senku", 9, "Combi Rifle","Senku", 3, 5, None, "", "", True),
               Troop("Senku", 17, "HMG", "Senku", 3, 5, 5, "", "", True),
               Troop("Senku", 11, "Shock MR","Senku", 3, 5, None, "", "", True),
